@@ -1,0 +1,16 @@
+myenv/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+htmlcov/
+.coverage
+logs/
+tests/
+.kiro/
+.git/
+.vscode/
+*.md
+.env
+examples/
