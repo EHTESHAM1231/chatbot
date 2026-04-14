@@ -27,4 +27,9 @@ htmlcov/
 
 # IDE
 .vscode/
+
+# Database files
+instance/
+*.db
+*.sqlite3
 .vercel
