@@ -112,26 +112,26 @@ graph TB
 ```mermaid
 flowchart TD
     START([User visits any URL]) --> AUTH{Logged in?}
-    AUTH -->|No| REDIR[Redirect to /login]
+    AUTH -->|No| REDIR[Redirect to login]
     AUTH -->|Yes| CHAT[Access chatbot]
 
     REDIR --> CHOICE{Action}
-    CHOICE -->|New user| SIGNUP[/signup]
-    CHOICE -->|Existing user| LOGIN[/login]
+    CHOICE -->|New user| SIGNUP[Go to signup page]
+    CHOICE -->|Existing user| LOGIN[Go to login page]
 
-    SIGNUP --> VAL1{Valid email<br/>+ strong password?}
+    SIGNUP --> VAL1{Valid email and\nstrong password?}
     VAL1 -->|No| ERR1[Show error]
     ERR1 --> SIGNUP
-    VAL1 -->|Yes| DUP{Email already<br/>registered?}
+    VAL1 -->|Yes| DUP{Email already\nregistered?}
     DUP -->|Yes| ERR2[Duplicate error]
     ERR2 --> SIGNUP
-    DUP -->|No| SAVE[Hash password<br/>Save to DB<br/>Log to CSV]
+    DUP -->|No| SAVE[Hash password\nSave to DB\nLog to CSV]
     SAVE --> LOGIN
 
-    LOGIN --> CREDS{Valid<br/>credentials?}
-    CREDS -->|No| ERR3[Invalid email/password]
+    LOGIN --> CREDS{Valid\ncredentials?}
+    CREDS -->|No| ERR3[Invalid email or password]
     ERR3 --> LOGIN
-    CREDS -->|Yes| SESSION[Create session<br/>Log to CSV]
+    CREDS -->|Yes| SESSION[Create session\nLog to CSV]
     SESSION --> CHAT
 
     style CHAT fill:#43a047,color:#fff
