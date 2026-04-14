@@ -10,30 +10,34 @@
     <div class="container">
         <header>
             <h1>🤖 LLM Chatbot</h1>
-            <button id="clearBtn" class="clear-btn">Clear History</button>
+            <div class="header-actions">
+                <span class="user-badge">{{ current_user.email }}</span>
+                <button id="clearBtn" class="clear-btn">Clear History</button>
+                <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+            </div>
         </header>
-        
+
         <div id="chatContainer" class="chat-container">
             <div class="welcome-message">
-                <p>Welcome! I can help you with:</p>
+                <p>Welcome back, <strong>{{ current_user.email }}</strong>! I can help you with:</p>
                 <ul>
-                    <li><strong>Summarization</strong> - "Summarize the key points..."</li>
-                    <li><strong>Question Answering</strong> - "What is...?" "How does...?"</li>
-                    <li><strong>General Chat</strong> - Have a conversation!</li>
+                    <li><strong>Summarization</strong> – "Summarize the key points..."</li>
+                    <li><strong>Question Answering</strong> – "What is...?" "How does...?"</li>
+                    <li><strong>General Chat</strong> – Have a conversation!</li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="input-container">
-            <textarea 
-                id="messageInput" 
-                placeholder="Type your message here..." 
+            <textarea
+                id="messageInput"
+                placeholder="Type your message here..."
                 rows="3"
             ></textarea>
             <button id="sendBtn" class="send-btn">Send</button>
         </div>
     </div>
-    
+
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
