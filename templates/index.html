@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 LLM Chatbot</h1>
+            <button id="clearBtn" class="clear-btn">Clear History</button>
+        </header>
+        
+        <div id="chatContainer" class="chat-container">
+            <div class="welcome-message">
+                <p>Welcome! I can help you with:</p>
+                <ul>
+                    <li><strong>Summarization</strong> - "Summarize the key points..."</li>
+                    <li><strong>Question Answering</strong> - "What is...?" "How does...?"</li>
+                    <li><strong>General Chat</strong> - Have a conversation!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <textarea 
+                id="messageInput" 
+                placeholder="Type your message here..." 
+                rows="3"
+            ></textarea>
+            <button id="sendBtn" class="send-btn">Send</button>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
