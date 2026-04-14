@@ -1,0 +1,29 @@
+# Environment files
+.env
+.env.local
+
+# Virtual environments
+venv/
+myenv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+
+# Test & coverage
+tests/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Kiro
+.kiro/
+
+# Markdown docs
+*.md
+
+# IDE
+.vscode/
